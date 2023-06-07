@@ -12,6 +12,6 @@
 	}
 </script>
 
-<style>
-	/*每个页面公共css */
+<style lang="scss">
+	@import "@/uni_modules/uview-ui/index.scss";
 </style>

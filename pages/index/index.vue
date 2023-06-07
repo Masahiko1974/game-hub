@@ -1,5 +1,10 @@
 <template>
 	<view class="content">
+		<view class="top-tabs">
+			<u-tabs :list="navList" lineWidth="40" lineColor="#FB7299" :activeStyle="activeStyle"
+				:inactiveStyle="inactiveStyle" @click="clickNav">
+			</u-tabs>
+		</view>
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
@@ -11,24 +16,44 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				navList: [{
+					name: '最新',
+					type: 'publish_date'
+				}, {
+					name: '热门',
+					type: 'view_count'
+				}],
+				navAction: 0,
+				activeStyle: {
+					color: '#303133',
+					fontWeight: 'blod',
+					transform: 'scale(1.08)'
+				},
+				inactiveStyle: {
+					color: '#999999',
+					transform: 'scale(1)'
+				},
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			clickNav(e) {
+				// this.loadState = true
+				// this.loadMoreState = 'more'
+				// this.blogList = []
+				this.navAction = e.index
+				// this.getData()
+			},
 		}
 	}
 </script>
 
 <style>
 	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		
 	}
 
 	.logo {

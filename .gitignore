@@ -1,8 +1,7 @@
-# Uni-app build output
-/dist/
-/unpackage/
+#/test/表示忽略根目录下的test目录及其所有内容。
 /uniCloud-aliyun/
+/.hbuilderx/
+/uni_modules/
+/unpackage/
 
-# IDE files
-/.idea/
-/.vscode/
+
